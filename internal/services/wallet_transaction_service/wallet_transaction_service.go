@@ -209,6 +209,8 @@ func (s *service) WalletTransferBalance(
 			return eris.Wrap(err, "error transaction")
 		}
 
+		walletDestination.Balance = walletDestination.Balance.Add(request.Nominal)
+
 		err = s.WalletRepository.UpdateWalletBalance(ctx, tx, &walletDestination, updateColumn)
 		if err != nil {
 			logger.Trace(ctx, metadata, err.Error())
