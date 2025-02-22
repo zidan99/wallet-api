@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS transaction_ledger;
+DROP TABLE IF EXISTS wallets;
+DROP TABLE IF EXISTS users;
